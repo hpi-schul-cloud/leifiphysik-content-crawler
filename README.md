@@ -20,7 +20,7 @@ The Schul-Cloud crawlers are a growing bunch of small pieces of code, intented t
 ## Infrastructure of the Crawler
 Beside the usuals, there are some more directories:
 - ./config - the place for credentials and Youtube informations like list of channels and so on
-- ./local_modules - there is one small module placed here for the bare Youtube functionality.
+- ./local_modules - there is one small module placed here for the bare fetching functionality.
 - routes - Only one express router: index.js
 
 The directories ./config and ./node_modules are git ignored.
