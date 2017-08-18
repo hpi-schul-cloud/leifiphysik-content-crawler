@@ -1,0 +1,16 @@
+{
+  "name": "sc-leifiphysik",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Arne Oberländer",
+  "license": "MIT",
+  "dependencies": {
+    "jxon": "^2.0.0-beta.5",
+    "promise-request": "^0.1.2"
+  }
+}
