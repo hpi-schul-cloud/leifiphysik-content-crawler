@@ -23,13 +23,10 @@ function _fetchLeifiItems() {
     }
     request(options)
         .then(function (response) {
-            // response is xml
+            // response is xml and gets converted to some JSON here
             var jx = JXON.stringToJs(response);
-            
-                
                 _returnItems = jx.elixier.datensatz
                 _callbackFunc(_returnItems)
-            
         })
         .catch(function (err) {
             // Something bad happened, handle the error

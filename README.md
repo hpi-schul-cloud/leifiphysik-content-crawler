@@ -1,10 +1,13 @@
 # leifiphysik-content-crawler
 Fetching learning material hosted on https://www.leifiphysik.de/ by special xml structure; posting their converted meta information to a Schul-Cloud endpoint.
+Note that one should contact the leifiphysik-Team to get the XML-URL, which is not given here.
 
 ## INSTALL
 call:
 
-```npm install```
+```
+npm install
+```
 
 AND FOR THE TIME BEING:
 
@@ -18,28 +21,31 @@ The Schul-Cloud crawlers are a growing bunch of small pieces of code, intented t
 
 
 ## Infrastructure of the Crawler
-Beside the usuals, there are some more directories:
-- ./config - the place for credentials and Youtube informations like list of channels and so on
+Beside the usual elements, there are some more directories:
 - ./local_modules - there is one small module placed here for the bare fetching functionality.
 - routes - Only one express router: index.js
+- ./app.js an express sub which combines the concrete configuration of the app´s credentials with those for the crawler (./crawler.js), the crawler itself and the posting towards the Schul-Cloud - endpoint given by the config params.
 
 The directories ./config and ./node_modules are git ignored.
  
 
 ## Configuring the Crawler / starting with no configuration 
-There are three options to provide: the apikey for the Youtube API, an array of Youtube channels to be fetched an the URI of the endpoint the information has to be posted to. When you call this app for the first time - with an empty config dir - a default json config ("local.json") gets generated for you to be filled with your specs.
+NEW:
+Due to the intention of being installed in a Docker container; this version gets ALL config parameters from process.env. In case there is no or non correct parameter given, the express app starts (on port 3000) but gives you nothing more than a short description of the parameters needed in the browser. The complete config data at runtime is put inside app.locals.config.
 
 ## Calling the Crawler
-The whole crawler is just an express subapp; you could start it for testing using "npm start".
+The whole crawler is just an express subapp; you could start it locally using 
+
+```
+npm start
+```
+.
 
 ## Authorization
-For sending data to the official Schul-Cloud content service you need a Schul-Cloud account and pass your credentials via process.env:
+Sending data to the official Schul-Cloud content service you need a Schul-Cloud service account and pass your credentials via process.env:
 CONTENT_USER, CONTENT_PASSWORD.
 
 ## TODOs
-- Simplify the config handling, which is the rest of an idea in another direction. 
-- Using Promise instead of callback at certain points.
-- Find another place for the crawler logic, which is unhandy as a module.
-- Maybe stress testing for a bigger bunch of channels.
-- Maybe make sc_youtube a real npm module.
+- There´s always room for optimization.
+- The Error handling is not quite elegant and should be re-implemented.
 
