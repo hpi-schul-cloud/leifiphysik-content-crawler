@@ -4,10 +4,18 @@ Note that one should contact the leifiphysik-Team to get the XML-URL, which is n
 
 ## INSTALL
 call:
-
 ```
 npm install
 ```
+
+And for the time being:
+
+Change dir to ./local_modules/sc_youtube/
+and call
+```
+npm install
+```
+there again. This will be fixed using a post install script in package.json in the near future.
 
 ## Basics
 The Schul-Cloud crawlers are a growing bunch of small pieces of code, intented to be coded by a Schul-Cloud community. Thus, our team tries to show several ways to participate and code a custom crawler for other content providers.
