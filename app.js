@@ -30,7 +30,7 @@ var appConfigSpec = {
     nopost: {
         env: "NOPOST",
         type: "boolean",
-        default: false
+        default: "NOPOST as boolean"
     },
     user: {
         env: "CONTENT_USER",
