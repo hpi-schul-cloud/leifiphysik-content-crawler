@@ -6,6 +6,9 @@
 function _getItemsMeta(sourceItems) {
     var metaItems = []
     sourceItems.map(function (item) {
+        //First tag shall always be the title of the channel
+            var tags = item.systematikpfad || [];
+            tags.unshift("LEIFIphysik");
         metaItems.push({
             originId: item.id,
             providerName: item.einsteller,
@@ -15,7 +18,7 @@ function _getItemsMeta(sourceItems) {
             thumbnail: item.quelle_logo_url,
             contentCategory: 'atomic',
             subject: "Physik",
-            tags: item.systematikpfad || [],
+            tags: tags,
             mimeType: 'text/html',
             licenses: [item.rechte]
         })
