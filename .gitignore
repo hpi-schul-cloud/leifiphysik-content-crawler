@@ -3,3 +3,7 @@ config/
 node_modules/
 .vscode/
 *.txt
+package-lock.json
+.env
+.vscode
+.config
