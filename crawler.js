@@ -10,10 +10,10 @@ function _getItemsMeta(sourceItems) {
             var tags = item.systematikpfad || [];
             tags.unshift("LEIFIphysik");
         metaItems.push({
-            originId: item.id,
+            originId: item.id_local,
             providerName: item.einsteller,
             url: item.url_datensatz,
-            title: item.title,
+            title: item.titel,
             description: item.beschreibung || "No Description",
             thumbnail: item.quelle_logo_url,
             contentCategory: 'atomic',
