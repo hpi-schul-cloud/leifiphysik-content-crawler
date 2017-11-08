@@ -117,16 +117,16 @@ function _configurate(app) {
     app.locals.config.configOK = Boolean(app.locals.config.configOK)
 }
 //Just for debugging incoming data
-function _sendToFile(videoMetaItems) {
-    fs.appendFile('./items.txt', JSON.stringify(videoMetaItems), 'utf8')
+function _sendToFile(metaItems) {
+    fs.appendFile('./items.txt', JSON.stringify(metaItems), 'utf8')
 }
 
-function _sendToEndpoint(videoMetaItems) {
-    var requestPromises = videoMetaItems.map(function (videoMetaItem) {
+function _sendToEndpoint(metaItems) {
+    var requestPromises = metaItems.map(function (metaItem) {
         return rpn({
             method: 'POST',
             uri: app.locals.config.endpointuri,
-            json: videoMetaItem,
+            json: metaItem,
             resolveWithFullResponse: true,
             auth: {
                 user: app.locals.config.user,
