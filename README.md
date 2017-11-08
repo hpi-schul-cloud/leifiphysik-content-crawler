@@ -10,7 +10,7 @@ npm install
 
 And for the time being:
 
-Change dir to ./local_modules/sc_youtube/
+Change dir to ./local_modules/sc_leifiphysik/
 and call
 ```
 npm install
