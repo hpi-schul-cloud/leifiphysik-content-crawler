@@ -1,4 +1,7 @@
 # leifiphysik-content-crawler
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/schul-cloud/leifiphysik-content-crawler.svg)](https://greenkeeper.io/)
+
 Fetching learning material hosted on https://www.leifiphysik.de/ by special xml structure; posting their converted meta information to a Schul-Cloud endpoint.
 Note that one should contact the leifiphysik-Team to get the XML-URL, which is not given here.
 
